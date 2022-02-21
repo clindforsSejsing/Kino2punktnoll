@@ -1,15 +1,20 @@
 body {
-  background-color: whitesmoke;
+    background-color: whitesmoke;
 }
 
 .card {
-  max-width: 340px;
+    max-width: 340px;
 }
 
 .container-fluid {
-  min-height: 100vh;
+    min-height: 100vh;
 }
 
-#listOfScreenings{
-  list-style: none;
+#listOfScreenings {
+    list-style: none;
+}
+
+.nav-link {
+    color: wheat;
+    font-size: 1.3rem;
 }
