@@ -1,4 +1,10 @@
 <div class="container mt-3">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">Hem</li>
+      <li class="breadcrumb-item active" aria-current="page">{{movie.attributes.title}}</li>
+    </ol>
+  </nav>
   <h1 class="display-8 mt-4">{{movie.attributes.title}}</h1>
   <img class="card-img-top" width="1080em" height="1200em" src="{{{movie.attributes.image.url}}} " alt="movie img" />
 
