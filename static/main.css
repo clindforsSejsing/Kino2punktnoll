@@ -1,21 +1,6 @@
 body {
   background-color: whitesmoke;
 }
-
 .card {
-  max-width: 340px;
-}
-
-.container-fluid {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-#listOfScreenings {
-  list-style: none;
-}
-#footer {
-  margin: 0;
-  padding: 0;
+  max-width: 25em;
 }

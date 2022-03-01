@@ -1,61 +1,86 @@
-<div class='container'>
-  <div class='card m-2'>
-    <h5 class='card-header'>{{movie.attributes.title}}</h5>
-    <img class='card-img-top' src='{{{movie.attributes.image.url}}} ' />
-    <div class='card-body'>
-      <div class='rating'></div>
-      <p class='card-text'> {{{markdown movie.attributes.intro}}}</p>
+<div class="container mt-3">
+  <h1 class="display-8 mt-4">{{movie.attributes.title}}</h1>
+  <img class="card-img-top" width="1080em" height="1200em" src="{{{movie.attributes.image.url}}} " alt="movie img" />
+
+  <div id="accordion">
+    <div class="card-w-100">
+      <div class="card-header">
+        <a class="btn" data-bs-toggle="collapse" href="#collapseMovie">
+          <h2 class="display-6">
+            Om filmen
+          </h2>
+        </a>
+      </div>
+      <div id="collapseMovie" class="collapse" data-bs-parent="#accordion">
+        <div class="card-body">
+          <div class="rating"></div>
+          <p class="text-dark">
+            {{{markdown movie.attributes.intro}}}.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-w-100">
+      <div class="card-header">
+        <a class="btn" data-bs-toggle="collapse" href="#collapseScreenings">
+          <h2 class="display-6">
+            Kommande visningar
+          </h2>
+        </a>
+      </div>
+      <div id="collapseScreenings" class="collapse" data-bs-parent="#accordion">
+        <div class="card-body">
+          <ul id="listOfScreenings">
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-w-100">
+      <div class="card-header">
+        <a class="btn" data-bs-toggle="collapse" href="#collapseRating">
+          <h2 class="display-6">
+            Lämna kommentar om filmen
+          </h2>
+        </a>
+      </div>
+      <div id="collapseRating" class="collapse" data-bs-parent="#accordion">
+        <div class="card-body">
+          <div class="container p-2">
+            <form action="" method="post" id="postForm">
+              <div class="form-group">
+                <label for="namePostReviewForm">Namn</label>
+                <input type="name" class="form-control" id="namePostReviewFor" />
+                <input type="hidden" name="movie" value="{{movie.id}}" />
+              </div>
+              <div class="form-group">
+                <label for="ratingPostReview">Välj betyg 1-5</label>
+                <select class="form-control" id="ratingPostReview">
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="commentPostReview">Kommentar</label>
+                <textarea class="form-control" id="commentPostReview" rows="3"></textarea>
+              </div>
+              <input type="submit" />
+            </form>
+            <div class="reviews"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class='container p-2'>
-    <form action='' method='post' id='postForm'>
-      <div class='form-group'>
-        <label for='namePostReviewForm'>Namn</label>
-        <input
-          type='name'
-          class='form-control'
-          id='namePostReviewForm'
-          placeholder='John Doe'
-          value=''
-          
-        />
-        <input type='hidden' name='movie' value='{{movie.id}}' />
-      </div>
-      <div class='form-group'>
-        <label for='ratingPostReview'>Välj betyg 1-5</label>
-        <select class='form-control' id='ratingPostReview'>
-          <option>0</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
-      <div class='form-group'>
-        <label for='commentPostReview'>Lämna kommentar</label>
-        <textarea
-          class='form-control'
-          id='commentPostReview'
-          rows='3'
-          
-        ></textarea>
-      </div>
-      <input type='submit' />
-    </form>
-  </div>
-  
-<div class='boxForScreenings'>
-  <h1>Kommande visningar: </h1>
-  <ul id='listOfScreenings'>
-  </ul>
+  <h3 class="display-6 pt-5 pb-3"><strong>Vad andra tycker om filmen:</strong></h3>
+  <script type="module" src="../../static/postreviews.js"></script>
+  <script src="../../static/u_screenings.js"></script>
+  <script src="../../static/generateRates.js"></script>
+  <script type="module" src="../../static/movieReviews.js"></script>
 </div>
-  <h1>Reviews</h1>
-    <div class="reviews"></div>
-  </div>
 </div>
-<script type="module" src='../../static/postreviews.js'></script>
-<script src='../../static/u_screenings.js'></script>
-<script src='../../static/generateRates.js'></script>
-<script type="module" src="../../static/movieReviews.js"></script>

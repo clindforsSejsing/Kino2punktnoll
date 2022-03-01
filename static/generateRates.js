@@ -8,7 +8,7 @@ async function renderAverageRating(id) {
     const res = await fetch(`/api/movies/${id}/rating`);
     const payload = await res.json();
     const ratingDiv = document.querySelector('.rating');
-    const rate = document.createElement('h3');
+    const rate = document.createElement('h2');
     rate.setAttribute('class', 'averageRate');
     rate.textContent = `Rate : ${payload}`;
     rate.style.color = '#008a8a';

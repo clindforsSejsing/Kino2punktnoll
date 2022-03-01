@@ -1,14 +1,38 @@
-<h1>Log in for reviews</h1>
-
-<form action='' method='get' id="loginForm">
-    <label for="username">Name :</label>
-    <input type="username" name="username" id='idUsername'><br><br>
-    <label for="pwd">Password:</label>
-    <input type="password" name="pwd" minlength="1" id="idPassword"><br><br>
-    <input name="form" type="submit" value="Log in"/>
-</form>
-<br>
-<button id="logout">Log out</button>
-
-<script src="../../static/getLogin.js"></script>
-<script src="../../static/logout.js"></script>
+<div class="container container-row align-items-center">
+    <h1 class="display-8 mt-4">Inloggning</h1>
+    <div class="col-6 mx-auto">
+  <div class="card-w-100" id="card" style="width:30em" ;>
+    <form action="#" id="login">
+      <div class="container-lg">
+        <div class="form-floating mb-3 mt-3">
+          <input type="text" autocomplete="username" required class="form-control" id="username"
+            placeholder="Enter username">
+          <label for="username">Användarnamn</label>
+        </div>
+        <div class="form-floating mt-3 mb-3">
+          <input type="password" autocomplete="current-password" required class="form-control" id="pwd"
+            placeholder="Enter password">
+          <label for="pwd">Lösenord</label>
+        </div>
+        <div class="row">
+          <div class="col mb-3 mt-3">
+            <input type="checkbox" class="form-check-input" id="check1" value="true" />
+            <label class="form-check-label" for="check1">Håll mig inloggad</label>
+          </div>
+          <div class="col mb-3 mt-3">
+            <a href="#" class="alert-link text-dark">Glömt lösenordet?</a>
+          </div>
+        </div>
+      </div>
+      <div class="d-grid mb-4">
+        <button type="submit" id="submitCta" class="btn btn-primary shadow-sm btn-block">Logga in</button>
+        <div class="d-grid mt-3 mb-3">
+          <button type="button" class="btn btn-outline-dark shadow-sm" id="registrerCta">
+            Inte medlem? Registrera här!
+          </button></label>
+        </div>
+      </div>
+  </div>
+  </form>
+</div>
+</div>
