@@ -2,11 +2,13 @@
 
 # API Documentation
 
-**Server:** ```https://floating-savannah-58511.herokuapp.com/api ```
+ClindforsSejsing repo server: https://assignment-bio.herokuapp.com/
+
+original repos**Server:** `https://floating-savannah-58511.herokuapp.com/api `
 
 ## Movies
 
-**GET:**  `/movies/{id}/reviews` 
+**GET:** `/movies/{id}/reviews`
 
 ### Response
 
@@ -33,21 +35,22 @@
     }
 }
 ```
+
 ### Parameters
 
-
-| Name | Type | In | Description |
-| ----------- | ----------- | ----------- | ----------- |
-| `page` | Integer | query | Page number of the results to fetch. Default: `1` |
-| `pageSize` | Integer | query | Results per page. Default: `20` |
+| Name       | Type    | In    | Description                                       |
+| ---------- | ------- | ----- | ------------------------------------------------- |
+| `page`     | Integer | query | Page number of the results to fetch. Default: `1` |
+| `pageSize` | Integer | query | Results per page. Default: `20`                   |
 
 ## Rating
+
 **GET:** `/movies/{id}/rating`
 `returns average rating of movie.`
 
 ## Reviews
 
-**POST:**  `/movies/{id}/reviews` 
+**POST:** `/movies/{id}/reviews`
 
 `Status: 201 OK`
 
@@ -67,12 +70,15 @@ Request Body-required
   }
 }
 ```
+
 `Status: 401`
+
 ```
 Unauthorized
 ```
 
 ## Log in
+
 **POST:** `login/getUser`
 
 `Status: 200 OK`
@@ -84,21 +90,25 @@ Request headers
     Authorization: "Basic " + btoa(name + ":" + password),
 },
 ```
+
 ## Screenings for one movie
+
 **GET:** `screenings/movies/{id}`
 
-returns all upcoming screenings for one movie, id, time & date and what room. 
+returns all upcoming screenings for one movie, id, time & date and what room.
+
 ```
 {[
    {
    "id": 51,
    "time": "2022-02-05T19:00:00.000Z",
-   "room": "Stora salongen" 
+   "room": "Stora salongen"
    },
 ]},
 ```
 
 # Mötesanteckningar
+
 Möte 04-02-22: Medverkande Johan, Haeju, Pontus, Carola, Roger
 
 Johan: Helt färdig med post-funktion, serverlogiken och inputvalidering. Mergat postreview till main.
@@ -107,11 +117,12 @@ Haeju: Gjort klart en login/logout-funktion med JWT och testning.
 
 Pontus: Gjort klart med sina test och Github Actions automatiska tester.
 
-Carola: Gjort klart testet för onescreening, dvs visning för varje enskild film. 
+Carola: Gjort klart testet för onescreening, dvs visning för varje enskild film.
 
 Roger: Gör om sitt arbete pga dataförlust. Färdig för merge innan deadline
 
-----------------------------------------------------------------------------
+---
+
 22-01-25 Möte:
 Deltagare:
 Johan
@@ -120,29 +131,26 @@ Pontus
 Carola
 Roger
 
-
 I denna gruppuppgift ska ni bygga nya funktioner på er Kino-sida. En funktion för att lista filmvisningar, och en funktion med vilken man ska kunna ladda upp och ta del av recensioner och betygsättning av de filmer som finns publicerade. Ni kan utgå ifrån den kod som någon av gruppmedlemmarna skrivit för föregående inlämning.
 
 Som datakälla används samma CMS-API som tidigare, som nu utökats med funktionalitet för att läsa reviews och ladda upp reviews (se bifogad API-dokumentation) samt läsa filmvisningar.
-
 
 -Vi har bestämt vilket repo som ska användas.
 -Vi har delat upp uppgifterna som PBIs i Github Project
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+Möte 22-02-01: medverkande Johan, Haeju, Pontus, Carola, Roger.
 
-Möte 22-02-01: medverkande Johan, Haeju, Pontus, Carola, Roger. 
+Johan: lagt till formulär som postreviews, lagt till api som tar emot req- sett så funktionaliteten fungerar. Har påbörjat en VG-uppgift för att köra automatiska tester via heroku.
 
-Johan: lagt till formulär som postreviews, lagt till api som tar emot req- sett så funktionaliteten fungerar. Har påbörjat en VG-uppgift för att köra automatiska tester via heroku. 
+Haeju: Klar med rating, testning och allt fungerar. Påbörjat VG-uppg för JWT.
 
-Haeju: Klar med rating, testning och allt fungerar. Påbörjat VG-uppg för JWT. 
-
-Pontus: Klar med reviews och pagination, funderar på bättre lösningar. Håller på med testlösningar. Verifiera filtreringsfunktion. 
+Pontus: Klar med reviews och pagination, funderar på bättre lösningar. Håller på med testlösningar. Verifiera filtreringsfunktion.
 Har påbörjat VG-uppgift- filtrera bort reviews som inte är verified.
 
-Carola: Skrivit om logiken serverside- börja med göra test idag. 
+Carola: Skrivit om logiken serverside- börja med göra test idag.
 
 Roger: Påbörjat uppgiften och börjar vara färdig inom en snar framtid.
 
-Nästa möte: fredag 4/2 kl. 20.00 sista avstämning, dokumentation av api bla.  samt planerad inlämning.
+Nästa möte: fredag 4/2 kl. 20.00 sista avstämning, dokumentation av api bla. samt planerad inlämning.
