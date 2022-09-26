@@ -2,9 +2,9 @@
 
 # API Documentation
 
-ClindforsSejsing repo server: https://assignment-bio.herokuapp.com/
+ClindforsSejsing repo server: https://assignment-bio.herokuapp.com/ (This is the deployed version of same project, only styled by me in bootstrap). 
 
-original repos**Server:** `https://floating-savannah-58511.herokuapp.com/api `
+original repos**Server:** `https://floating-savannah-58511.herokuapp.com/api ` (this is the deployed version of our teams build webpage, no styling). 
 
 ## Movies
 
